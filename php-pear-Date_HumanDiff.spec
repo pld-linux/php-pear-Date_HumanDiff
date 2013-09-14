@@ -1,5 +1,6 @@
 %define		status		alpha
 %define		pearname	Date_HumanDiff
+%define		php_min_version 5.0.0
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Generate textual time differences that are easily understandable by humans
 Name:		php-pear-Date_HumanDiff
@@ -14,6 +15,9 @@ BuildRequires:	php-packagexml2cl
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
+Requires:	php(core) >= %{php_min_version}
+Requires:	php(date)
+Requires:	php(pcre)
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
