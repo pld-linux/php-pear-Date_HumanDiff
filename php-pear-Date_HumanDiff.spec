@@ -4,12 +4,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Generate textual time differences that are easily understandable by humans
 Name:		php-pear-Date_HumanDiff
-Version:	0.4.0
+Version:	0.5.0
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	c7442bc2bb8e10167ac2350048875448
+# Source0-md5:	a697cc97f7e3e9a4c155f99c08349fd3
 URL:		http://pear.php.net/package/Date_HumanDiff/
 BuildRequires:	php-packagexml2cl
 BuildRequires:	php-pear-PEAR
@@ -32,6 +32,9 @@ In PEAR status of this package is: %{status}.
 
 %prep
 %pear_package_setup
+
+# wtf?
+mv .%{php_pear_dir}/{src/,}Date/HumanDiff/Locale/ru.php
 
 %build
 packagexml2cl package.xml > ChangeLog
@@ -57,3 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{php_pear_dir}/Date/HumanDiff/Locale/de.php
 %lang(el) %{php_pear_dir}/Date/HumanDiff/Locale/el.php
 %lang(fa) %{php_pear_dir}/Date/HumanDiff/Locale/fa.php
+%lang(ru) %{php_pear_dir}/Date/HumanDiff/Locale/ru.php
