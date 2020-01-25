@@ -1,7 +1,6 @@
 %define		status		alpha
 %define		pearname	Date_HumanDiff
 %define		php_min_version 5.0.0
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Generate textual time differences that are easily understandable by humans
 Name:		php-pear-Date_HumanDiff
 Version:	0.5.0
